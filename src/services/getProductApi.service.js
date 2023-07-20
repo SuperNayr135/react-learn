@@ -17,3 +17,18 @@ export const getFakeProduct = (callback) => {
 
   // return product.data;
 };
+
+export const getDetailFakeProduct = (id, callback) => {
+  // const product = await axios.get(baseUrlLimit);
+  axios
+    .get(`${baseUrl}/${id}`)
+    .then((res) => {
+      callback(res.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  // console.log(product.data);
+
+  // return product.data;
+};

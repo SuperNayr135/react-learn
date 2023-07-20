@@ -1,9 +1,24 @@
 import { Link } from "react-router-dom";
+import { useDarkMode } from "../../context/DarkMode";
 
 const AuthLayout = (props) => {
   const { title, children, type } = props;
+  const { isDarkMode, setIsDarkMode } = useDarkMode();
+
   return (
-    <div className="flex flex-col items-center justify-center h-screen gap-2">
+    <div
+      className={`flex flex-col items-center justify-center h-screen gap-2 ${
+        isDarkMode && "bg-white text-black"
+      }`}
+    >
+      <button
+        className={`absolute rounded right-2 top-2 ${
+          isDarkMode && "text-gray-800"
+        }`}
+        onClick={() => setIsDarkMode(!isDarkMode)}
+      >
+        {isDarkMode ? "go Dark" : "go Light"}
+      </button>
       <h1 className="mb-2 text-5xl">{title}</h1>
       <p className="mb-4 text-sm">Welcome, Please enter your details!</p>
       {children}

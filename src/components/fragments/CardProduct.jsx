@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
 import CommonButton from "../commonButton";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/slices/cartSlices";
 
 const CardProduct = (props) => {
   const { children } = props;
@@ -10,13 +13,11 @@ const CardProduct = (props) => {
 };
 
 const Header = (props) => {
-  const { href, src, alt } = props;
+  const { id, src, alt } = props;
   return (
-    <div>
-      <a href={href}>
-        <img src={src} alt={alt} className="p-8 rounded-t-lg " />
-      </a>
-    </div>
+    <Link to={`/product/${id}`}>
+      <img src={src} alt={alt} className="p-8 rounded-t-lg " />
+    </Link>
   );
 };
 
@@ -35,7 +36,8 @@ const Body = (props) => {
 };
 
 const Footer = (props) => {
-  const { id, title, price, hancleAddToCart } = props;
+  const { id, title, price } = props;
+  const dispatch = useDispatch();
   return (
     <div className="flex flex-wrap items-center justify-between gap-2 px-5 pb-5 ">
       <span className="text-xl text-white font-bond">
@@ -44,7 +46,16 @@ const Footer = (props) => {
       <CommonButton
         width="w-content"
         fontWeight="text-xs"
-        onClick={() => hancleAddToCart(id, title, price)}
+        onClick={() =>
+          dispatch(
+            addToCart({
+              id: id,
+              price: price,
+              qty: 1,
+              title: title,
+            })
+          )
+        }
       >
         Add to chart
       </CommonButton>

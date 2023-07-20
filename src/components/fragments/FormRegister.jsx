@@ -5,7 +5,7 @@ const FormRegister = () => {
   return (
     <form className="w-5/12 p-5 border-2 border-purple-600 border-solid rounded-lg">
       <InputForm
-        lable="Fullname"
+        lable="Full Name"
         type="text"
         placeholder="insert your name"
         name="fullname"
