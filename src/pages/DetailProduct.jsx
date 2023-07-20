@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import { getDetailFakeProduct } from "../services/getProductApi.service";
 import { useEffect, useState } from "react";
-import InputForm from "../components/input";
-import CommonButton from "../components/commonButton";
+// import InputForm from "../components/input";
+// import CommonButton from "../components/commonButton";
 
 const DetailProduct = () => {
   const { id } = useParams();

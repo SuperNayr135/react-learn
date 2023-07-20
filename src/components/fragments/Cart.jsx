@@ -14,7 +14,7 @@ const Cart = (props) => {
   const dispatchAddToCart = useDispatch();
   const dispatchUseTotalPrice = useTotalPriceDispatch();
   const totalPrice = useTotalPrice();
-  const { totalCart, setTotalCart } = useTotalCart();
+  const { totalCart } = useTotalCart();
   // const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {

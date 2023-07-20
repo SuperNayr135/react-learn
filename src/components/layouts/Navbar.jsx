@@ -1,7 +1,7 @@
 import { useLogin } from "./../../hooks/useLogin";
 import CommonButton from "../commonButton";
 import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useTotalPrice } from "../../context/TotalPriceContext";
 import { useTotalCart } from "../../context/TotalCart";

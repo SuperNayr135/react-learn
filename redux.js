@@ -25,12 +25,12 @@ const cartReducer = (
 
 // store
 const store = legacy_createStore(cartReducer);
-console.log("oncreate store: ", store.getState());
+// console.log("oncreate store: ", store.getState());
 
-// subscribe
-store.subscribe(() => {
-  console.log("store onchange: ", store.getState());
-});
+// // subscribe
+// store.subscribe(() => {
+//   console.log("store onchange: ", store.getState());
+// });
 
 // dispatch
 const action1 = { type: "ADD_TO_CART", payload: { id: 2, qty: 10 } };

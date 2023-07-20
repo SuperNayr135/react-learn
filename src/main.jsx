@@ -51,8 +51,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Provider store={store}>
       <DarkModeContextProvider>
         <TotalPriceProvider>
-          {/* <RouterProvider router={router} /> */}
-          <BrowserRouter>
+          <RouterProvider router={router} />
+          {/* <BrowserRouter>
             <Routes>
               <Route path="/" element={<App />} />
               <Route path="/login" element={<LoginPage />} />
@@ -62,7 +62,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
-          </BrowserRouter>
+          </BrowserRouter> */}
         </TotalPriceProvider>
       </DarkModeContextProvider>
     </Provider>
