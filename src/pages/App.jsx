@@ -9,8 +9,8 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="flex justify-center items-center flex-col h-screen gap-2">
-      <div className="flex justfiy-center items-center">
+    <div className="flex flex-col items-center justify-center h-screen gap-2">
+      <div className="flex items-center justfiy-center">
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>

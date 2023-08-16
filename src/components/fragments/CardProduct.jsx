@@ -6,7 +6,7 @@ import { addToCart } from "../../redux/slices/cartSlices";
 const CardProduct = (props) => {
   const { children } = props;
   return (
-    <div className="flex flex-col justify-start w-64 max-w-sm bg-gray-800 border border-gray-700 rounded-lg shadow ">
+    <div className="flex flex-col justify-start max-w-sm bg-gray-800 border border-gray-700 rounded-lg shadow w-44 ">
       {children}
     </div>
   );
@@ -16,7 +16,9 @@ const Header = (props) => {
   const { id, src, alt } = props;
   return (
     <Link to={`/product/${id}`}>
-      <img src={src} alt={alt} className="p-8 rounded-t-lg " />
+      <div className="flex justify-center">
+        <img src={src} alt={alt} className="w-full h-48 pb-1 rounded-t-lg" />
+      </div>
     </Link>
   );
 };
@@ -24,12 +26,12 @@ const Header = (props) => {
 const Body = (props) => {
   const { title, children } = props;
   return (
-    <div className="h-full px-5 pb-5">
+    <div className="h-full px-2 ">
       <a href="">
-        <h5 className="mb-2 text-xl font-semibold tracking-tight text-white">
-          {title.substring(0, 20)}...
+        <h5 className="text-base font-semibold tracking-tight text-white">
+          {title.substring(0, 18)}...
         </h5>
-        <p className="text-white text-s">{children.substring(0, 100)}...</p>
+        {/* <p className="text-white text-s">{children.substring(0, 100)}...</p> */}
       </a>
     </div>
   );
@@ -39,11 +41,11 @@ const Footer = (props) => {
   const { id, title, price } = props;
   const dispatch = useDispatch();
   return (
-    <div className="flex flex-wrap items-center justify-between gap-2 px-5 pb-5 ">
-      <span className="text-xl text-white font-bond">
+    <div className="flex flex-wrap items-center justify-between gap-2 px-2 pb-2 ">
+      <span className="text-base text-white font-bond">
         {price.toLocaleString("en-US", { style: "currency", currency: "USD" })}
       </span>
-      <CommonButton
+      {/* <CommonButton
         width="w-content"
         fontWeight="text-xs"
         onClick={() =>
@@ -58,7 +60,7 @@ const Footer = (props) => {
         }
       >
         Add to chart
-      </CommonButton>
+      </CommonButton> */}
     </div>
   );
 };

@@ -4,12 +4,19 @@ const TotalPriceContext = createContext();
 
 const TotalPriceDispatchContext = createContext();
 
+export const initial_state = {
+  total: JSON.parse(localStorage.getItem("total-price")) || [],
+};
+
 const totalPriceReducer = (state, action) => {
   switch (action.type) {
     case "UPDATE": {
       return {
         total: action.payload.total,
       };
+    }
+    case "GET": {
+      return state;
     }
     default: {
       throw Error("unknown action: ", action.type);
@@ -18,7 +25,7 @@ const totalPriceReducer = (state, action) => {
 };
 
 export const TotalPriceProvider = ({ children }) => {
-  const [totalPrice, dispatch] = useReducer(totalPriceReducer, { total: 0 });
+  const [totalPrice, dispatch] = useReducer(totalPriceReducer, initial_state);
   return (
     <TotalPriceContext.Provider value={totalPrice}>
       <TotalPriceDispatchContext.Provider value={dispatch}>

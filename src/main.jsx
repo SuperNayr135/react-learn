@@ -14,6 +14,7 @@ import DarkModeContextProvider from "./context/DarkMode";
 import { TotalPriceProvider } from "./context/TotalPriceContext";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { TotalCartProvider } from "./context/TotalCart";
 
 const router = createBrowserRouter([
   {
@@ -50,9 +51,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
       <DarkModeContextProvider>
-        <TotalPriceProvider>
-          <RouterProvider router={router} />
-          {/* <BrowserRouter>
+        <TotalCartProvider>
+          <TotalPriceProvider>
+            <RouterProvider router={router} />
+            {/* <BrowserRouter>
             <Routes>
               <Route path="/" element={<App />} />
               <Route path="/login" element={<LoginPage />} />
@@ -63,7 +65,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </BrowserRouter> */}
-        </TotalPriceProvider>
+          </TotalPriceProvider>
+        </TotalCartProvider>
       </DarkModeContextProvider>
     </Provider>
   </React.StrictMode>
